@@ -8,7 +8,7 @@ temp = []
 answer = []
 
 for i in range(K):
-    temp = copy.deepcopy(upper[i*N//K: (i+1)*N//K])
+    temp = upper[i*N//K: (i+1)*N//K]
     temp.sort()
     answer.extend(temp)
 print(*answer)
