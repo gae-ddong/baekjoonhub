@@ -2,7 +2,6 @@
 T = int(input())
 fact = []
 
-
 for _ in range(T):
     fact.append(int(input()))
 for i in fact:
