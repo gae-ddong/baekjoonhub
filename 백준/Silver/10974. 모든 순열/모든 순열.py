@@ -1,19 +1,22 @@
 # 모든 순열
 
 N = int(input())
+check = [0 for i in range(N)]
 ans = []
 
 
 def back(N):
-    global ans
+    global ans 
     if len(ans) == N:
         print(*ans)
         return
+    
     for i in range(1, N+1):
-        if i not in ans:
+        if check[i-1] == 0:
+            check[i-1] = 1
             ans.append(i)
             back(N)
-            del ans[-1]
+            check[ans.pop()-1] = 0 
     return
 
 
