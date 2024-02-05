@@ -1,19 +1,24 @@
-# 수들의 합
 import sys
 
 N, M = map(int, sys.stdin.readline().split())
 A = list(map(int, sys.stdin.readline().split()))
 
-sum = 0
 cnt = 0
+j = 0
+sum = 0
+i = 0
 
-for i in range(N):
-    sum = 0
-    for j in range(i, N):
-        sum += A[j]
-        if sum >= M:
-            if sum == M:
-                cnt += 1
-            break
+while not (i == N and sum < M):
+    if sum < M:
+        sum += A[i]
+        i += 1
+    if sum > M:
+        sum -= A[j]
+        j += 1
+    elif sum == M:
+        cnt += 1
+        sum -= A[j]
+        j += 1
+
 
 print(cnt)
