@@ -7,9 +7,7 @@ s = 4
 
 while (s <= N):
     sum += i
-    for j in range(i*(i+1), N+1, i):
-        if j % (i) == 0:
-            sum += i + (j // i)
+    sum += i * (N//i - i) + (N//i - i)*(i+1+N//i)//2
     i += 1
     s = i * i
 
