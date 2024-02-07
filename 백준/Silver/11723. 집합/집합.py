@@ -1,12 +1,11 @@
 # 집합
 import sys
-input = sys.stdin.readline
 
 N = int(input())
 s = 0
 
 for _ in range(N):
-    cal = list(input().split())
+    cal = list(sys.stdin.readline().split())
     if cal[0][1] == 'l':  # all
         s = 0b11111111111111111111
     elif cal[0][1] == 'm':  # empty
